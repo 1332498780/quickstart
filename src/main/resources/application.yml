@@ -1,0 +1,45 @@
+spring:
+  messages:
+    basename: message
+    encoding: UTF-8
+  profiles:
+    active: product
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/spring
+    username: root
+    password: root
+    dbcp2:
+      min-idle: 1
+      initial-size: 1
+      max-total: 5
+      max-wait-millis: 3000
+  jpa:
+    e
+#c3p0:
+#  jdbcUrl: jdbc:mysql://localhost:3306/spring
+#  user: root
+#  password: root
+#  driverClass: com.mysql.jdbc.Driver
+#  minPoolSize: 1
+#  maxPoolSize: 5
+#  maxIdleTime: 3000
+#  initialPoolSize: 1
+#mybatis:
+#  config-location: classpath:mybatis/mybatis.cfg.xml
+#  type-aliases-package: cn.hzy.demo.model
+
+
+
+---
+spring:
+  profiles: dev
+server:
+  port: 8080
+
+---
+spring:
+  profiles: product
+server:
+  port: 7070
